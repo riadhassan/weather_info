@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <style>
+        html, body * {
+            font-family: sans-serif;
+            text-align: center;
+        }
+        .location-input * {
+            font-size: 16px;
+        }
+        .all-weather-data{
+            display: flex;
+            justify-content: space-evenly;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weather app</h1>
+    <div class="location-input">
+        <form action="" method="get" class="input-form">
+            <input type="text" name="location" id="location" placeholder="Location....">
+            <input type="submit">
+        </form>
+    </div>
+    {% if message %}
+    <div class="notify">
+        <p> {{ message }}</p>
+    </div>
+    {% else %}
+    <div class="city-name">
+        <h2>City Name: {{ city_name }}</h2>
+    </div>
+    <div class="all-weather-data">
+        <div class="weather-data">
+            <h3>Temperature</h3>
+            <h5>{{ temp }} C</h5>
+        </div>
+        <div class="weather-data">
+            <h3>Wind</h3>
+            <h5>{{ wind }} m/s</h5>
+        </div>
+        <div class="weather-data">
+            <h3>Pressure</h3>
+            <h5>{{ pressure }} mmHg</h5>
+        </div>
+        <div class="weather-data">
+            <h3>Humidity</h3>
+            <h5>{{ humidity }} %</h5>
+        </div>
+    </div>
+    {% endif %}
+</body>
+</html>
