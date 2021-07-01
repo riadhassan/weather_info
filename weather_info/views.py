@@ -4,7 +4,7 @@ import requests
 
 
 def get_weather_data(request: HttpRequest):
-    api_key = "4db3e8c90a6f8a20397db8680cf24f12"
+    api_key = "YOUR_API From https://openweathermap.org/"
     search_query = request.GET.get("location")
 
     if search_query:
